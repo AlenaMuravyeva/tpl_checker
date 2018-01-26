@@ -1,0 +1,95 @@
+Relay Disconnect Command taken from EL Sewedy Electrometer 3ph meter SEEEM341-2RE01 SN:00000321 at 2017-06-25 13:44:47
+0086
+PROTOCOL_READ_TYPE_DISCONNECT
+2017-06-25
+0
+EXPECT_SUCCESS
+12
+
+RAND_BUFFER 625461524a6556377944786856514c64
+
+BEGIN_FRAMES
+
+// 1 - HDLC: SNRM request.
+7ea0200361931b9f8180140502080006020800070400000007080400000007b3c67e
+// HDLC: UA response.
+7ea01e610373b57c818012050180060180070400000001080400000001533b7e
+
+// 2 - DLMS: AARQ.
+7ea04c0361105827e6e600603ea1090607608574050801018a0207808b0760857405080202ac128010625461524a6556377944786856514c64be10040e01000000065f1f0400007e1fffff9e2a7e
+// DLMS: AARE.
+7ea0586103300751e6e700614aa109060760857405080101a203020100a305a10302010e88020780890760857405080202aa1280106162636465666768696a6b6c6d6e6f70be10040e0800065f1f040000181d0164000718d07e
+
+// 3 - CI: 15, OBIS: 0.0.40.0.0.255, Method ID: 1, Description: High Security Action Request
+7ea02b0361328debe6e600c301c1000f0000280000ff010109103a0145fbf3c43d29a0d18204b8034c3bcf727e
+// Action response
+7ea02461035262dce6e700c701c100010009103eeef2daec34dda0dda9be28f57e50099ba07e
+
+// 4 - CI: 1, OBIS: 0.0.96.1.1.255, Attribute ID: 2, Description: Manufacturer Name
+7ea0190361543998e6e600c0018100010000600101ff020037717e
+// Get-Response-Normal
+7ea0326103746d10e6e700c40181000a20454c2053657765647920456c656374726f6d6574657200800000006607e1061432917e
+
+// 5 - CI: 1, OBIS: 0.0.42.0.0.255, Attribute ID: 2, Description: Model
+7ea019036176299ae6e600c00181000100002a0000ff0200174d7e
+// Get-Response-Normal
+7ea022610396d017e6e700c40181000910534545454d3334312d325245303100007b087e
+
+// 6 - CI: 1, OBIS: 0.0.96.1.0.255, Attribute ID: 2, Description: Serial Number
+7ea0190361985994e6e600c0018100010000600100ff02008c6d7e
+// Get-Response-Normal
+7ea01a6103b88676e6e700c40181000a08303030303033323175d97e
+
+// 7 - CI: 1, OBIS: 1.0.0.2.0.255, Attribute ID: 2, Description: Firmware Version
+7ea0190361ba4996e6e600c0018100010100000200ff02004e767e
+// Get-Response-Normal
+7ea0166103daa6a1e6e700c40181000a04312e303817697e
+
+// 8 - CI: 1, OBIS: 0.0.96.1.4.255, Attribute ID: 2, Description: Year of the Manufacture
+7ea0190361dc7990e6e600c0018100010000600104ff0200601f7e
+// Get-Response-Normal
+7ea0136103fcc58be6e700c40181001207e1aecb7e
+
+// 9 - CI: 8, OBIS: 0.0.1.0.0.255, Attribute ID: 2, Description: Real Time Clock Get
+7ea0190361fe6992e6e600c0018100080000010000ff020065d77e
+// Get-Response-Normal
+7ea01e61031e56c4e6e700c4018100090c07e10619ff0d2c2fff80000048f27e
+
+// 10 - CI: 70, OBIS: 0.0.96.3.10.255, Method ID: 1, Description: Relay Disconnect
+7ea01b0361106fa5e6e600c301810046000060030aff01010f0039c57e
+// Action response
+7ea011610330d3bee6e700c70181010052ab7e
+
+// 11 - CI: 70, OBIS: 0.0.96.3.10.255, Attribute ID: 2, Description: Relay Status
+7ea019036132099ee6e600c001810046000060030aff02002ba87e
+// Get-Response-Normal
+7ea0126103520adbe6e700c4018100030104ec7e
+
+// 12 - HDLC: DISC frame.
+7ea00703615365817e
+// HDLC: UA response.
+7ea01e610373b57c818012050180060180070400000001080400000001533b7e
+
+END
+
+This reading covers unsuccessful execution of Relay Disconnect command due to hardware fault.
+This TPL file is handcrafted.
+
+1)  Send HDLC SNRM frame request
+2)  Send AARQ
+3)  Action OBIS: 0.0.40.0.0.255  Method ID: 1 - HLS authentication
+4)  Get OBIS: 0.0.96.1.1.255  Attribute ID: 2 - Manufacturer Name
+5)  Get OBIS: 0.0.42.0.0.255  Attribute ID: 2 - Model
+6)  Get OBIS: 0.0.96.1.0.255  Attribute ID: 2 - Serial Number
+7)  Get OBIS: 1.0.0.2.0.255   Attribute ID: 2 - Firmware Version
+8)  Get OBIS: 0.0.96.1.4.255  Attribute ID: 2 - Year of the Manufacture
+9)  Get OBIS: 0.0.1.0.0.255   Attribute ID: 2 - Real Time Clock
+10) Action OBIS: 0.0.96.3.10.255 Method ID: 1 - Relay Disconnect
+11) Get OBIS: 0.0.96.3.10.255 Attribute ID: 2 - Relay Status
+12) Send DISC frame
+
+/* Colourful comments are nice */
+/* Local Variables: */
+/* mode: c */
+/* c-syntactic-indentation: nil */
+/* End: */
